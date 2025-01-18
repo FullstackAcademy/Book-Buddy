@@ -38,9 +38,9 @@ const Account = () => {
       </div>
     );
   }
-  console.log(accountData);
+  
   return (
-    <div>
+    <div className="container">
       <h2>Account Details</h2>
       {accountData ? (
         <>
@@ -53,14 +53,16 @@ const Account = () => {
           <p>
             <strong>Username:</strong> {accountData.username}
           </p>
-          <h2>Your Checked-Out Books</h2>
+          <h3>Your Checked-Out Books</h3>
 
           {books.length === 0 ? (
             <p>You have 0 books checked out.</p>
           ) : (
-            <ul>
+            
+            <ul className="book-list">
               {books?.map((book) => (
-                <li key={book.id}>
+                <li className="card" key={book.id}>
+                    <div className="card-content"></div>
                   {book.title} by {book.author}
                 </li>
               ))}

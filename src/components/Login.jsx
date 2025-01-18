@@ -25,8 +25,9 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
+    <div className="container">
       <h2>Login</h2>
+      <div className="card">
       <form onSubmit={handleLogin}>
         <div className="form-group">
           <label htmlFor="email">Email</label>
@@ -62,6 +63,7 @@ const Login = () => {
       <p>
         Don’t have an account? <Link to="/register">Create one here</Link>.
       </p>
+    </div>
     </div>
   );
 };

@@ -36,52 +36,46 @@ const Register = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="row">
-        <div className="col">
-          <input
-            type="text"
-            name="firstName"
-            className="form-control"
-            placeholder="First name"
-            value={formData.firstName}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="col">
-          <input
-            type="text"
-            name="lastName"
-            className="form-control"
-            placeholder="Last name"
-            value={formData.lastName}
-            onChange={handleChange}
-            required
-          />
-        </div>
+    <form className="register-form" onSubmit={handleSubmit}>
+      <div className="form-group">
+      <h2>Register</h2>
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First name"
+          value={formData.firstName}
+          onChange={handleChange}
+          required
+        />
       </div>
-      <div className="form-row mt-3">
-        <div className="form-group col-md-6">
+      <div className="form-group">
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last name"
+          value={formData.lastName}
+          onChange={handleChange}
+          required
+        />
+      </div>
+
+      <div className="form-row">
+        <div className="form-group">
           <label htmlFor="inputEmail4">Email</label>
           <input
             type="email"
             name="email"
-            className="form-control"
-            id="inputEmail4"
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
             required
           />
         </div>
-        <div className="form-group col-md-6">
+        <div className="form-group">
           <label htmlFor="inputPassword4">Password</label>
           <input
             type="password"
             name="password"
-            className="form-control"
-            id="inputPassword4"
             placeholder="Password"
             value={formData.password}
             onChange={handleChange}
@@ -89,29 +83,24 @@ const Register = () => {
           />
         </div>
       </div>
-      <div className="col-auto mt-3">
-        <label className="sr-only" htmlFor="inlineFormInputGroup">
-          Username
-        </label>
-        <div className="input-group mb-2">
-          <div className="input-group-prepend">
-            <div className="input-group-text">@</div>
-          </div>
-          <input
-            type="text"
-            name="username"
-            className="form-control"
-            id="inlineFormInputGroup"
-            placeholder="Username"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
-        </div>
+
+      <div className="form-group">
+        <label htmlFor="inputUsername">Username</label>
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          value={formData.username}
+          onChange={handleChange}
+          required
+        />
       </div>
-      <button type="submit" className="btn btn-primary mt-3">
-        Register
-      </button>
+
+      <div className="button-container">
+        <button type="submit" className="submit-btn">
+          Register
+        </button>
+      </div>
     </form>
   );
 };

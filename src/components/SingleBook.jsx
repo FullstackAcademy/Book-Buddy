@@ -31,12 +31,14 @@ const SingleBook = () => {
   const book = data.book;
 
   return (
-    <div>
-      <h2>{book.title}</h2>
-      <p>
+    <div className="container">
+        <div className="card">
+            <div className="card-content">
+      <h2 className="card-title">{book.title}</h2>
+      <p className="card-author">
         <strong>Author:</strong> {book.author}
       </p>
-      <p>
+      <p className="card-description">
         <strong>Description:</strong> {book.description}
       </p>
       <p>Status: {book.available ? "Available" : "Checked Out"}</p>
@@ -48,6 +50,8 @@ const SingleBook = () => {
       {isLoggedIn && book.available && (
         <button onClick={handleCheckout}>Checkout</button>
       )}
+    </div>
+    </div>
     </div>
   );
 };

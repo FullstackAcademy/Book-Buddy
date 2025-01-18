@@ -22,16 +22,22 @@ const Books = () => {
   }
 
   return (
-    <div>
-      <h1>Book Catalog</h1>
+    <div className="constainer">
+      <h2>Book Catalog</h2>
+      <div className="books-list">
       {books.map((book) => (
-        <li key={book.id}>
+    <div className="card" key={book.id}>
+        <div className="card-content">
           <Link to={`/books/${book.id}`}>
-            <h3>{book.title}</h3>
-            <p>Author: {book.author}</p>
+            <h3 className="card-title">{book.title}</h3>
+            <p className="card-author">Author: {book.author}</p>
           </Link>
-        </li>
+          </div>
+        </div>
+        
       ))}
+    </div>
+
     </div>
   );
 };

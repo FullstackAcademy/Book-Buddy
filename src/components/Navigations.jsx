@@ -5,7 +5,6 @@ import { logout } from "../store-slice";
 
 const Navigation = () => {
   const authState = useSelector((state) => state.auth);
-
   const isLoggedIn = !!useSelector((state) => state.auth.token);
   const token = useSelector((state) => state.auth.token);
 
